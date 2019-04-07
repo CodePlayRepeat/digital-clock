@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Coded by Donna</title>
+        <title>Neon Digital clock</title>
     </head>
     <body> 
         <div id="cl" onclick="f1()"></div>
@@ -10,13 +10,20 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron|Raleway|Major Mono Display|Libre Baskerville|ZCOOL KuaiLe');
 body{
     background-color:black;
-    user-select:none;
+    user-select: none;
 }
 #cl,#tro{
     font-family:'Orbitron';
     color:rgb(0,110,200);
     text-align:center;
     text-shadow:0px 0px 10px rgb(0,110,200);
+}
+#cl{
+    margin-top: 14vmax;
+    font-size: 10vmax;
+}
+#tro{
+    font-size: 1.3vmax;
 }
 button{
     background-color:transparent;
@@ -37,12 +44,7 @@ button{
             var a=document.getElementById('cl');
             var t=document.getElementById('tro');
 var dys=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var mont=['January','Feburary','March','April','May','June','July','August','September','October','November','December'];         
-window.onload=function(){
-    a.style.fontSize=((window.innerWidth/2)-650)+'px';
-    a.style.marginTop=((window.innerWidth/2)-500)+'px';
-    t.style.fontSize=((window.innerWidth/2)-750)+'px';
-}
+var mont=['January','Feburary','March','April','May','June','July','August','September','October','November','December'];
             function tic(){
                 let d=new Date();
                 let mnt=d.getMonth();
@@ -87,13 +89,8 @@ window.onload=function(){
                           a.style.textShadow="0px 0px 10px yellow";
                           t.style.textShadow="0px 0px 10px yellow";
                         break;
-                        default:
-                          a.style.color="red";
-                          t.style.color="red";
-                          a.style.textShadow="0px 0px 10px red";
-                          t.style.textShadow="0px 0px 10px red";
                     }
-                    th=(th>6)?1:th;
+                    th=(th>5)?1:th;
                 }
             }while(f1.click>0);
             var tk=1;
@@ -117,11 +114,8 @@ window.onload=function(){
                           a.style.fontFamily="Libre Baskerville";
                           t.style.fontFamily="Libre Baskerville";
                         break;
-                        default:
-                          a.style.fontFamily="ZCOOL KuaiLe";
-                          t.style.fontFamily="ZCOOL KuaiLe";
                     }
-                    tk=(tk>6)?1:tk;
+                    tk=(tk>5)?1:tk;
                 }
             }while(f2.click>0);
         </script>
